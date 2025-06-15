@@ -16,52 +16,170 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
+    
+/* 
+==================================================================================================================================
+========================================================PopUp message=============================================================
+================================================================================================================================== */
+    /* Modal background */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #bbbbbb;
+    }
+
+    /* Modal box */
+    .modal-content {
+      background: linear-gradient(135deg, #19191a 60%, #bbdefb); /* light blue gradient */
+      margin: 15% auto;
+      padding: 25px 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+
+      /* Enhanced box shadow */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 
+                  0 0 10px rgba(100, 181, 246, 0.4); 
+      /* border: 1px solid #64b5f6; */
+    }
+
+    /* Modal buttons */
+    .modal-actions {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .modal-actions button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal-actions button:first-child {
+      /* background-color: #64b5f6;
+      color: #000; */
+      background: linear-gradient(to right, #64b5f6, #2196f3);
+      color: white;
+      box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+    }
+
+    .modal-actions button:last-child {
+      /* background-color: #e0e0e0;
+      color: #333; */
+      
+      background: #f1f1f1;
+      color: #333;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+/* 
+==================================================================================================================================
+=======================================================End Of PopUp message=======================================================
+================================================================================================================================== */
+
+/*==================================================================================================================================
+======================================================Side Bar Styling============================================================
+================================================================================================================================== */
+    /* Default sidebar (shrinked) */
     .sidebar {
-      width: 200px;
+      width: 60px;
       background-color: #1a1a1a;
-      padding: 20px;
+      padding: 20px 10px;
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       position: fixed;
-      top: 0;
-      bottom: 0;
-      left: -180px;
+      left: 0;
+      top: 20%;
+      transform: translateY(-50%);
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
-      transition: left 0.3s;
+      transition: width 0.3s;
+      overflow: hidden;
+      z-index: 999;
     }
+
+    /* Expand on hover */
     .sidebar:hover {
-      left: 0;
+      width: 200px;
     }
+
+    /* Sidebar link styles */
     .sidebar a {
       display: flex;
       align-items: center;
-      gap: 10px;
-      color: #bbbbbb;
-      padding: 10px 0;
+      padding: 10px 5px;
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 10px;
+      transition: background-color 0.3s;
     }
-    .sidebar a:hover {
-      color: #64b5f6;
+
+    /* Icon styling */
+    .sidebar a i {
+      font-size: 20px;
+      width: 30px;
+      min-width: 30px;
     }
-    .download-btn-sidebar {
-      position: absolute;
+
+    /* Text hidden by default, visible on hover */
+    .link-text {
+      white-space: nowrap;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .sidebar:hover .link-text {
+      opacity: 1;
+    }
+   
+/* 
+==================================================================================================================================
+======================================================End ofSide Bar Styling======================================================
+================================================================================================================================== */ 
+
+
+/* 
+==================================================================================================================================
+======================================================Download Button Styling=====================================================
+================================================================================================================================== */
+    /* Bottom-left download button */
+    .download-btn {
+      position: fixed;
       bottom: 20px;
       left: 20px;
-      right: 20px;
       text-align: center;
-      display: inline-block;
-      padding: 10px;
+      padding: 10px 20px;
       background-color: #64b5f6;
       color: #000;
       text-decoration: none;
       border-radius: 5px;
       transition: background-color 0.3s;
     }
-    .download-btn-sidebar:hover {
+
+    .download-btn:hover {
       background-color: #42a5f5;
     }
+
+/* 
+==================================================================================================================================
+======================================================End of Download Button Styling==============================================
+================================================================================================================================== */
+
+
+/* 
+==================================================================================================================================
+======================================================Content Details Styling=====================================================
+================================================================================================================================== */
     .content {
       margin-left: 220px;
       padding: 40px 20px;
@@ -90,15 +208,23 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .download-btn {
-      display: none;
-    }
     .recommendation {
       font-style: italic;
       background: rgba(255, 255, 255, 0.05);
       padding: 15px;
       border-left: 5px solid #64b5f6;
     }
+    
+/* 
+==================================================================================================================================
+=====================================================End of Content Details Styling===============================================
+================================================================================================================================== */
+
+    
+/* 
+==================================================================================================================================
+======================================================Skills Experience Styling===================================================
+================================================================================================================================== */
     .skill-years {
       margin-top: 20px;
       background: rgba(255, 255, 255, 0.05);
@@ -106,6 +232,16 @@
       padding: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
+    
+/* 
+==================================================================================================================================
+==============================================SEnd Of Skills Experience Styling====================================================
+================================================================================================================================== */
+
+/* 
+==================================================================================================================================
+======================================================Content Collapse Styling====================================================
+================================================================================================================================== */    
     .collapsible {
       cursor: pointer;
       display: flex;
@@ -123,6 +259,17 @@
     .collapsible.active + .content-collapsible {
       display: block;
     }
+    
+/* 
+==================================================================================================================================
+==============================================End of Content Collapse Styling=====================================================
+================================================================================================================================== */
+
+
+/* 
+==================================================================================================================================
+======================================================Media Queries Styling========================================================
+================================================================================================================================== */
     @media (max-width: 768px) {
       .sidebar {
         position: static;
@@ -136,7 +283,7 @@
       }
     }
     @media print {
-      .sidebar, .download-btn-sidebar {
+      .sidebar, .download-btn {
         display: none !important;
       }
       .skill-years {
@@ -144,20 +291,94 @@
         position: static !important;
       }
     }
+    
+/* 
+==================================================================================================================================
+======================================================End of Media Queries Styling================================================
+================================================================================================================================== */
   </style>
+
+
+
+<!--==================================================================================================================================
+======================================================Java Script Code================================================================
+====================================================================================================================================-->
   <script>
-    function toggleSection(button) {
-      button.classList.toggle("active");
-    }
+  //   function toggleSidebar() {
+  //     // const sidebar = document.getElementById('sidebar');
+  //     // sidebar.classList.toggle('shrink');        
+  // }
+
+      // Toggle the content
+      function toggleSection(button) {
+        button.classList.toggle("active");
+      }
+
+      // // Print the page
+      // function confirmDownload() {
+      // const message = "Please ensure that the Experience, Education and Skills are expanded. Do you want to continue?";
+      // if (confirm(message)) {
+      //   window.print();
+      // }
+
+      function openModal() {
+          document.getElementById("downloadModal").style.display = "block";
+        }
+
+        function closeModal() {
+          document.getElementById("downloadModal").style.display = "none";
+        }
+
+        function proceedDownload() {
+          closeModal();
+          window.print();
+        }
+
+        // Close modal if user clicks outside it
+        window.onclick = function(event) {
+          const modal = document.getElementById("downloadModal");
+          if (event.target === modal) {
+            closeModal();
+          }
+        }
   </script>
+
+<!--==================================================================================================================================
+======================================================End Of Java Script Code=========================================================
+====================================================================================================================================-->
+
 </head>
 <body>
-  <div class="sidebar">
-    <a href="#"><i class="fas fa-home"></i> Home</a>
-    <a href="#"><i class="fas fa-image"></i> Gallery</a>
-    <a href="https://www.linkedin.com/in/teboho-matjele-a34705bb" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a class="download-btn-sidebar" href="#" onclick="window.print()">Download as PDF</a>
+    <!-- Sidebar Toggle Button -->
+    <!-- <button class="sidebar-toggle" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button> -->
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#"><i class="fas fa-home"></i><span class="link-text"> Home</span></a>
+    <a href="#"><i class="fas fa-image"></i><span class="link-text"> Gallery</span></a>
+    <a href="https://www.linkedin.com/in/teboho-matjele-a34705bb" target="_blank">
+      <i class="fab fa-linkedin"></i><span class="link-text"> LinkedIn</span>
+    </a>
   </div>
+
+  <!-- Fixed Download Button -->
+  <a class="download-btn" href="#" onclick="openModal()">Download as PDF</a>
+
+  <!-- Custom Modal(PopUp Messages) -->
+  <div id="downloadModal" class="modal">
+    <div class="modal-content">
+      <p>Please ensure that the <strong>Experience</strong>, <strong>Education</strong>, and <strong>Skills</strong> sections are expanded before downloading.</p>
+      <div class="modal-actions">
+        <button onclick="proceedDownload()">Continue</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
+
   <div class="content">
     <h1>Teboho Matjele</h1>
     <p><strong>Email:</strong> matjele7@gmail.com 
@@ -167,7 +388,6 @@
 
     <p><strong>Software Developer at MineWare Consulting</strong><br>
     Johannesburg, South Africa 
-    <!-- | LinkedIn: <a href="https://www.linkedin.com/in/teboho-matjele-a34705bb" target="_blank" style="color:#64b5f6;">linkedin.com/in/teboho-matjele-a34705bb</a></p> -->
 
     <div class="section">
       <h2>Professional Summary</h2>
