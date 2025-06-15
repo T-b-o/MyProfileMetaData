@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teboho Matjele - Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: linear-gradient(135deg, #0a0a0a 60%, #0d47a1);
+      color: #bbbbbb;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: -180px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      transition: left 0.3s;
+    }
+    .sidebar:hover {
+      left: 0;
+    }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #bbbbbb;
+      padding: 10px 0;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+    .sidebar a:hover {
+      color: #64b5f6;
+    }
+    .download-btn-sidebar {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      text-align: center;
+      display: inline-block;
+      padding: 10px;
+      background-color: #64b5f6;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .download-btn-sidebar:hover {
+      background-color: #42a5f5;
+    }
+    .content {
+      margin-left: 220px;
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 800px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    h1, h2 {
+      color: #64b5f6;
+    }
+    .section {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideIn 1s ease-out forwards;
+      margin-bottom: 20px;
+    }
+    .section:nth-of-type(1) { animation-delay: 0.3s; }
+    .section:nth-of-type(2) { animation-delay: 0.6s; }
+    .section:nth-of-type(3) { animation-delay: 0.9s; }
+    .section:nth-of-type(4) { animation-delay: 1.2s; }
+    .section:nth-of-type(5) { animation-delay: 1.5s; }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .download-btn {
+      display: none;
+    }
+    .recommendation {
+      font-style: italic;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-left: 5px solid #64b5f6;
+    }
+    .skill-years {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .collapsible {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      color: #64b5f6;
+      font-size: 1.2em;
+      border: none;
+      width: 100%;
+    }
+    .collapsible + .content-collapsible {
+      display: none;
+    }
+    .collapsible.active + .content-collapsible {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        position: static;
+        width: 100%;
+        text-align: center;
+        left: 0;
+      }
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+    }
+    @media print {
+      .sidebar, .download-btn-sidebar {
+        display: none !important;
+      }
+      .skill-years {
+        display: block !important;
+        position: static !important;
+      }
+    }
+  </style>
+  <script>
+    function toggleSection(button) {
+      button.classList.toggle("active");
+    }
+  </script>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="#"><i class="fas fa-home"></i> Home</a>
+    <a href="#"><i class="fas fa-image"></i> Gallery</a>
+    <a href="https://www.linkedin.com/in/teboho-matjele-a34705bb" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a class="download-btn-sidebar" href="#" onclick="window.print()">Download as PDF</a>
+  </div>
+  <div class="content">
+    <h1>Teboho Matjele</h1>
+    <p><strong>Email:</strong> matjele7@gmail.com 
+      <!-- <a href="mailto:matjele7@gmail.com" style="color:#64b5f6;"> -->
+    <p><strong>Contact (Mobile):</strong> 0738704236 </p>
+    
+
+    <p><strong>Software Developer at MineWare Consulting</strong><br>
+    Johannesburg, South Africa 
+    <!-- | LinkedIn: <a href="https://www.linkedin.com/in/teboho-matjele-a34705bb" target="_blank" style="color:#64b5f6;">linkedin.com/in/teboho-matjele-a34705bb</a></p> -->
+
+    <div class="section">
+      <h2>Professional Summary</h2>
+      <p>Full-Stack Developer with nearly 6 years of hands-on experience in the .NET ecosystem, specializing in C#, SQL Server, DevExpress, and FastReport. 
+          Proven expertise in developing and maintaining scalable desktop and web applications with a strong focus on performance, usability, and reliability. 
+          Skilled in debugging, testing, and providing client-facing support. Known for a keen analytical mindset and a commitment to clean, 
+          user-centered software design and architecture.</p>
+    </div>
+
+    <div class="section">
+      <button class="collapsible" onclick="toggleSection(this)">Experience <span>+</span></button>
+      <div class="content-collapsible">
+        <p><strong><a href="https://www.mineware.co.za/" target="_blank" style="color: #bbbbbb;">MineWare Consulting</a></strong><br>Software Developer<br>August 2019 - Present (5 years 11 months), Johannesburg, South Africa</p>
+        <ul>
+          <li>Built and maintained full-stack applications using C#, SQL Server, DevExpress, and FastReport.</li>
+          <li>Delivered support and testing for enterprise clients across mining and workplace safety platforms.</li>
+          <li>Participated in Agile/Scrum development cycles and worked closely with cross-functional teams.</li>
+        </ul>
+        <p><strong><a href="https://www.younglings.academy/" target="_blank" style="color: #bbbbbb;">Younglings Africa</a></strong><br>Software Developer Intern<br>February 2019 - December 2019 (11 months), Cape Town, South Africa</p>
+        <ul>
+          <li>Developed web applications using ASP.NET, JavaScript, and HTML5.</li>
+          <li>Gained hands-on experience with Linux-based development, Git version control, and full-stack tools.</li>
+        </ul>
+        <p><strong><a href="https://capaciti.breezy.hr/" target="_blank" style="color: #bbbbbb;">Capaciti</a></strong><br>Software Developer Trainee<br>February 2018 - January 2019 (1 year), Cape Town, South Africa</p>
+        <ul>
+          <li>Trained in Java, JavaScript, JSON, MySQL, HTML5, CSS, and PHP.</li>
+          <li>Contributed to real-world software projects as part of an accelerated technical training program.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <button class="collapsible" onclick="toggleSection(this)">Education <span>+</span></button>
+      <div class="content-collapsible">
+        <ul>
+          <li><strong>University of the Western Cape</strong>: Postgraduate Diploma in Software Development, 2018</li>
+          <li><strong>University of the Free State</strong>: BSc. Information Technology (Industry and Mining), 2011 - 2016</li>
+          <li><strong>IIE Rosebank College</strong>: Certificate in Computer Technical Support(A+ and N+), 2007 - 2008</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <button class="collapsible" onclick="toggleSection(this)">Skills <span>+</span></button>
+      <div class="content-collapsible">
+        <p><strong>Languages & Technologies:</strong> C#, ASP.NET, SQL, JavaScript, HTML5, CSS, XML, PHP,  MySQL, Java, JavaFX </p>
+        <p><strong>Development & Tools:</strong> Visual Studio, Git, DevExpress, Microsoft SQL Server, SceneBuilder, FastReport </p>
+        <p><strong>Frameworks & Methodologies:</strong> Scrum, Object-Oriented Programming (OOP), Full-Stack Development, UI/UX Design</p>
+        <p><strong>Soft Skills:</strong> Analytical Thinking, Critical Problem Solving, Creative Ideation, Client Support, Collaborative Teamwork</p>
+      </div>
+      <div class="skill-years">
+        <h3>Years of Experience per Skill</h3>
+        <ul>
+          <li>Full-Stack Development: 6+ years</li>
+          <li>C# & Microsoft SQL Server: 6+ years</li>
+          <li>Git & Version Control: 6+ years</li>
+          <li>OOP & Software Development: 6+ years</li>
+          <li>JavaScript, HTML5, CSS, ASP.NET: 2+ years</li>
+          <li>Java, JavaFX, SceneBuilder: 2+ years</li>
+          <li>User Experience & UI Design: 6+ years</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Recommendation</h2>
+      <div class="recommendation">
+        "I had the pleasure of working alongside Teboho on several projects, and I can confidently say that he is an intelligent, skilled, and highly competent professional. He consistently approached his work with a high level of professionalism and demonstrated a collaborative and positive attitude.<br><br>
+        Teboho's interpersonal skills, combined with his genuine kindness and generosity, made him an asset not only to the team but also to the overall work environment. I am confident that any organisation would greatly benefit from his broad range of talents, both in a professional and personal capacity."
+        <br><br>– Michael Tolmay, Senior Developer
+      </div>
+    </div>
+  </div>
+</body>
+</html>
