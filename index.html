@@ -3,25 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teboho Matjele - Resume</title>
+  <title>Teboho Alfred Matjele - Senior Software Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       margin: 0;
       background: linear-gradient(135deg, #0a0a0a 60%, #0d47a1);
-      color: #bbbbbb;
+      color: #e0e0e0;
       display: flex;
       min-height: 100vh;
       overflow-x: hidden;
     }
-    
-/* 
-==================================================================================================================================
-========================================================PopUp message=============================================================
-================================================================================================================================== */
-    /* Modal background */
+
+    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -31,217 +27,331 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #bbbbbb;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #e0e0e0;
     }
 
-    /* Modal box */
     .modal-content {
-      background: linear-gradient(135deg, #19191a 60%, #bbdefb); /* light blue gradient */
+      background: linear-gradient(135deg, #1e1e2e 60%, #1a237e);
       margin: 15% auto;
       padding: 25px 30px;
       border-radius: 12px;
       width: 90%;
-      max-width: 400px;
+      max-width: 450px;
       text-align: center;
-
-      /* Enhanced box shadow */
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 
-                  0 0 10px rgba(100, 181, 246, 0.4); 
-      /* border: 1px solid #64b5f6; */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(100, 181, 246, 0.3);
+      border: 1px solid #64b5f6;
     }
 
-    /* Modal buttons */
     .modal-actions {
-      margin-top: 20px;
+      margin-top: 25px;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 20px;
     }
 
     .modal-actions button {
-      padding: 10px 20px;
+      padding: 10px 25px;
       border: none;
       border-radius: 5px;
       font-weight: bold;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .modal-actions button:hover {
+      transform: translateY(-2px);
     }
 
     .modal-actions button:first-child {
-      /* background-color: #64b5f6;
-      color: #000; */
-      background: linear-gradient(to right, #64b5f6, #2196f3);
+      background: linear-gradient(to right, #2196f3, #1976d2);
       color: white;
-      box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+      box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
     }
 
     .modal-actions button:last-child {
-      /* background-color: #e0e0e0;
-      color: #333; */
-      
-      background: #f1f1f1;
-      color: #333;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background: #424242;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-/* 
-==================================================================================================================================
-=======================================================End Of PopUp message=======================================================
-================================================================================================================================== */
-
-/*==================================================================================================================================
-======================================================Side Bar Styling============================================================
-================================================================================================================================== */
-    /* Default sidebar (shrinked) */
+    /* Sidebar Styles */
     .sidebar {
       width: 60px;
-      background-color: #1a1a1a;
+      background-color: #121212;
       padding: 20px 10px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.7);
       position: fixed;
       left: 0;
-      top: 20%;
+      top: 50%;
       transform: translateY(-50%);
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
-      transition: width 0.3s;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
       z-index: 999;
     }
 
-    /* Expand on hover */
     .sidebar:hover {
-      width: 200px;
+      width: 220px;
+      box-shadow: 3px 0 20px rgba(0,0,0,0.9);
     }
 
-    /* Sidebar link styles */
     .sidebar a {
       display: flex;
       align-items: center;
-      padding: 10px 5px;
+      padding: 12px 8px;
       color: #fff;
       text-decoration: none;
-      transition: background-color 0.3s;
+      transition: all 0.3s;
+      border-radius: 8px;
+      margin: 5px 0;
     }
 
-    /* Icon styling */
+    .sidebar a:hover {
+      background: rgba(100, 181, 246, 0.2);
+      transform: translateX(5px);
+    }
+
     .sidebar a i {
-      font-size: 20px;
-      width: 30px;
-      min-width: 30px;
+      font-size: 22px;
+      width: 35px;
+      min-width: 35px;
+      text-align: center;
     }
 
-    /* Text hidden by default, visible on hover */
     .link-text {
       white-space: nowrap;
       overflow: hidden;
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.3s 0.1s;
+      font-size: 14px;
+      font-weight: 500;
     }
 
     .sidebar:hover .link-text {
       opacity: 1;
     }
-   
-/* 
-==================================================================================================================================
-======================================================End ofSide Bar Styling======================================================
-================================================================================================================================== */ 
 
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, rgba(26, 35, 126, 0.2), rgba(13, 71, 161, 0.1));
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border-left: 5px solid #2196f3;
+    }
 
-/* 
-==================================================================================================================================
-======================================================Download Button Styling=====================================================
-================================================================================================================================== */
-    /* Bottom-left download button */
-    .download-btn {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      text-align: center;
-      padding: 10px 20px;
-      background-color: #64b5f6;
-      color: #000;
+    .name-title {
+      color: #2196f3;
+      font-size: 2.8em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .subtitle {
+      color: #bbdefb;
+      font-size: 1.4em;
+      margin: 5px 0 15px 0;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e0e0e0;
+    }
+
+    .contact-item i {
+      color: #64b5f6;
+    }
+
+    .github-link {
+      color: #2196f3;
       text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      font-weight: bold;
     }
 
-    .download-btn:hover {
-      background-color: #42a5f5;
+    .github-link:hover {
+      text-decoration: underline;
     }
 
-/* 
-==================================================================================================================================
-======================================================End of Download Button Styling==============================================
-================================================================================================================================== */
-
-
-/* 
-==================================================================================================================================
-======================================================Content Details Styling=====================================================
-================================================================================================================================== */
+    /* Section Styles */
     .content {
-      margin-left: 220px;
-      padding: 40px 20px;
+      margin-left: 100px;
+      padding: 40px;
       width: 100%;
-      max-width: 800px;
+      max-width: 900px;
       margin-right: auto;
       margin-left: auto;
     }
-    h1, h2 {
-      color: #64b5f6;
-    }
+
     .section {
       opacity: 0;
       transform: translateY(30px);
       animation: fadeSlideIn 1s ease-out forwards;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      background: rgba(30, 30, 46, 0.7);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      border-left: 4px solid #2196f3;
     }
-    .section:nth-of-type(1) { animation-delay: 0.3s; }
-    .section:nth-of-type(2) { animation-delay: 0.6s; }
-    .section:nth-of-type(3) { animation-delay: 0.9s; }
-    .section:nth-of-type(4) { animation-delay: 1.2s; }
-    .section:nth-of-type(5) { animation-delay: 1.5s; }
+
+    .section-title {
+      color: #64b5f6;
+      font-size: 1.8em;
+      margin-top: 0;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title i {
+      color: #2196f3;
+    }
 
     @keyframes fadeSlideIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .recommendation {
+    /* Experience Section */
+    .experience-item {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+    }
+
+    .company-name {
+      color: #bbdefb;
+      font-size: 1.3em;
+      margin: 0;
+    }
+
+    .company-name a {
+      color: #bbdefb;
+      text-decoration: none;
+    }
+
+    .company-name a:hover {
+      color: #64b5f6;
+      text-decoration: underline;
+    }
+
+    .job-title {
+      color: #90caf9;
       font-style: italic;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 15px;
-      border-left: 5px solid #64b5f6;
+      margin: 5px 0;
     }
-    
-/* 
-==================================================================================================================================
-=====================================================End of Content Details Styling===============================================
-================================================================================================================================== */
 
-    
-/* 
-==================================================================================================================================
-======================================================Skills Experience Styling===================================================
-================================================================================================================================== */
-    .skill-years {
+    .duration {
+      color: #b0bec5;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    .experience-details {
+      padding-left: 20px;
+    }
+
+    .experience-details li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .experience-details li:before {
+      content: "▸";
+      color: #2196f3;
+      position: absolute;
+      left: -15px;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
       margin-top: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
-    
-/* 
-==================================================================================================================================
-==============================================SEnd Of Skills Experience Styling====================================================
-================================================================================================================================== */
 
-/* 
-==================================================================================================================================
-======================================================Content Collapse Styling====================================================
-================================================================================================================================== */    
+    .skill-category {
+      background: rgba(33, 150, 243, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(33, 150, 243, 0.3);
+    }
+
+    .skill-category h4 {
+      color: #90caf9;
+      margin-top: 0;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skill-list li {
+      padding: 5px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+    }
+
+    .skill-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Projects Section */
+    .project-item {
+      background: rgba(30, 30, 46, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border-left: 3px solid #4caf50;
+    }
+
+    .project-title {
+      color: #4caf50;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    /* References Section */
+    .reference-card {
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(33, 150, 243, 0.1));
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    .reference-contact {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-style: normal;
+      font-size: 0.9em;
+      color: #b0bec5;
+    }
+
+    /* Collapsible Sections */
     .collapsible {
       cursor: pointer;
       display: flex;
@@ -252,214 +362,474 @@
       font-size: 1.2em;
       border: none;
       width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 10px 0;
+      transition: background 0.3s;
     }
-    .collapsible + .content-collapsible {
+
+    .collapsible:hover {
+      background: rgba(100, 181, 246, 0.1);
+    }
+
+    .collapsible i {
+      transition: transform 0.3s;
+    }
+
+    .collapsible.active i {
+      transform: rotate(180deg);
+    }
+
+    .content-collapsible {
       display: none;
+      padding: 15px;
+      background: rgba(20, 20, 30, 0.5);
+      border-radius: 8px;
+      margin-top: 10px;
     }
+
     .collapsible.active + .content-collapsible {
       display: block;
     }
-    
-/* 
-==================================================================================================================================
-==============================================End of Content Collapse Styling=====================================================
-================================================================================================================================== */
 
+    /* Download Button */
+    .download-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: linear-gradient(to right, #2196f3, #1976d2);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+      transition: all 0.3s;
+      z-index: 998;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-/* 
-==================================================================================================================================
-======================================================Media Queries Styling========================================================
-================================================================================================================================== */
-    @media (max-width: 768px) {
-      .sidebar {
-        position: static;
-        width: 100%;
-        text-align: center;
-        left: 0;
-      }
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(33, 150, 243, 0.6);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
       .content {
-        margin-left: 0;
-        padding: 20px;
+        margin-left: 80px;
+        padding: 30px;
       }
     }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 60px;
+        border-radius: 20px 20px 0 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .sidebar:hover {
+        width: 100%;
+        height: 70px;
+      }
+
+      .sidebar a {
+        flex-direction: column;
+        padding: 8px;
+      }
+
+      .link-text {
+        font-size: 12px;
+      }
+
+      .content {
+        margin-left: 0;
+        margin-bottom: 80px;
+        padding: 20px;
+      }
+
+      .download-btn {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 80px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .name-title {
+        font-size: 2em;
+      }
+    }
+
     @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
       .sidebar, .download-btn {
         display: none !important;
       }
-      .skill-years {
+
+      .content {
+        margin: 0;
+        padding: 20px;
+        max-width: 100%;
+      }
+
+      .section {
+        background: white;
+        border: 1px solid #ddd;
+        box-shadow: none;
+      }
+
+      .collapsible {
+        color: black;
+      }
+
+      .content-collapsible {
         display: block !important;
-        position: static !important;
+        background: white;
+      }
+
+      .modal {
+        display: none !important;
       }
     }
-    
-/* 
-==================================================================================================================================
-======================================================End of Media Queries Styling================================================
-================================================================================================================================== */
   </style>
-
-
-
-<!--==================================================================================================================================
-======================================================Java Script Code================================================================
-====================================================================================================================================-->
-  <script>
-  //   function toggleSidebar() {
-  //     // const sidebar = document.getElementById('sidebar');
-  //     // sidebar.classList.toggle('shrink');        
-  // }
-
-      // Toggle the content
-      function toggleSection(button) {
-        button.classList.toggle("active");
-      }
-
-      // // Print the page
-      // function confirmDownload() {
-      // const message = "Please ensure that the Experience, Education and Skills are expanded. Do you want to continue?";
-      // if (confirm(message)) {
-      //   window.print();
-      // }
-
-      function openModal() {
-          document.getElementById("downloadModal").style.display = "block";
-        }
-
-        function closeModal() {
-          document.getElementById("downloadModal").style.display = "none";
-        }
-
-        function proceedDownload() {
-          closeModal();
-          window.print();
-        }
-
-        // Close modal if user clicks outside it
-        window.onclick = function(event) {
-          const modal = document.getElementById("downloadModal");
-          if (event.target === modal) {
-            closeModal();
-          }
-        }
-  </script>
-
-<!--==================================================================================================================================
-======================================================End Of Java Script Code=========================================================
-====================================================================================================================================-->
-
 </head>
 <body>
-    <!-- Sidebar Toggle Button -->
-    <!-- <button class="sidebar-toggle" onclick="toggleSidebar()">
-      <i class="fas fa-bars"></i>
-    </button> -->
-
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    <a href="#"><i class="fas fa-home"></i><span class="link-text"> Home</span></a>
-    <a href="#"><i class="fas fa-image"></i><span class="link-text"> Gallery</span></a>
-    <a href="https://www.linkedin.com/in/teboho-matjele-a34705bb" target="_blank">
-      <i class="fab fa-linkedin"></i><span class="link-text"> LinkedIn</span>
-    </a>
+    <a href="#header"><i class="fas fa-user"></i><span class="link-text"> Profile</span></a>
+    <a href="#experience"><i class="fas fa-briefcase"></i><span class="link-text"> Experience</span></a>
+    <a href="#skills"><i class="fas fa-code"></i><span class="link-text"> Skills</span></a>
+    <a href="https://github.com/T-b-o" target="_blank"><i class="fab fa-github"></i><span class="link-text"> GitHub</span></a>
+    <a href="https://www.linkedin.com/in/teboho-matjele-a34705bb" target="_blank"><i class="fab fa-linkedin"></i><span class="link-text"> LinkedIn</span></a>
   </div>
 
-  <!-- Fixed Download Button -->
-  <a class="download-btn" href="#" onclick="openModal()">Download as PDF</a>
+  <!-- Download Button -->
+  <a class="download-btn" href="#" onclick="openModal()">
+    <i class="fas fa-download"></i> Download PDF
+  </a>
 
-  <!-- Custom Modal(PopUp Messages) -->
+  <!-- Download Modal -->
   <div id="downloadModal" class="modal">
     <div class="modal-content">
-      <p>Please ensure that the <strong>Experience</strong>, <strong>Education</strong>, and <strong>Skills</strong> sections are expanded before downloading.</p>
+      <h3><i class="fas fa-print"></i> Print Preparation</h3>
+      <p>Please ensure all sections are expanded before printing for a complete resume.</p>
       <div class="modal-actions">
-        <button onclick="proceedDownload()">Continue</button>
+        <button onclick="proceedDownload()">Print Resume</button>
         <button onclick="closeModal()">Cancel</button>
       </div>
     </div>
   </div>
 
-
-
+  <!-- Main Content -->
   <div class="content">
-    <h1>Teboho Matjele</h1>
-    <p><strong>Email:</strong> matjele7@gmail.com 
-      <!-- <a href="mailto:matjele7@gmail.com" style="color:#64b5f6;"> -->
-    <p><strong>Contact (Mobile):</strong> 0738704236 </p>
-    
-
-    <p><strong>Software Developer at MineWare Consulting</strong><br>
-    Johannesburg, South Africa 
-
-    <div class="section">
-      <h2>Professional Summary</h2>
-      <p>Full-Stack Developer with nearly 6 years of hands-on experience in the .NET ecosystem, specializing in C#, SQL Server, DevExpress, and FastReport. 
-          Proven expertise in developing and maintaining scalable desktop and web applications with a strong focus on performance, usability, and reliability. 
-          Skilled in debugging, testing, and providing client-facing support. Known for a keen analytical mindset and a commitment to clean, 
-          user-centered software design and architecture.</p>
+    <!-- Header Section -->
+    <div class="header" id="header">
+      <h1 class="name-title">TEBOHO ALFRED MATJELE</h1>
+      <p class="subtitle">Senior Software Developer (C# / .NET)</p>
+      <p>Centurion, Gauteng, South Africa</p>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>matjele7@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>073 870 4236</span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/T-b-o" target="_blank" class="github-link">github.com/T-b-o</a>
+        </div>
+      </div>
     </div>
 
+    <!-- Executive Summary -->
     <div class="section">
-      <button class="collapsible" onclick="toggleSection(this)">Experience <span>+</span></button>
+      <h2 class="section-title"><i class="fas fa-star"></i> EXECUTIVE SUMMARY</h2>
+      <p>Senior Full Stack C# Developer with over <strong>5 years of experience</strong> delivering and supporting <strong>business-critical, security-sensitive enterprise systems</strong>. Strong expertise in <strong>C# .NET, SQL Server and ASP.NET MVC</strong>, with hands-on experience building and maintaining applications used for <strong>compliance, auditing and incident investigation</strong> in regulated environments.</p>
+      <p>Proven ability to take <strong>end-to-end ownership</strong> of systems, translate complex business and regulatory requirements into reliable software solutions, and maintain high standards of <strong>data integrity, performance and availability</strong>. Actively expanding skills in <strong>ASP.NET Core, REST APIs, CI/CD practices and cloud-native technologies</strong>, with a continuous learning mindset aligned to modern enterprise and financial services delivery.</p>
+    </div>
+
+    <!-- Core Technical Skills -->
+    <div class="section" id="skills">
+      <button class="collapsible" onclick="toggleSection(this)">
+        <span><i class="fas fa-cogs"></i> CORE TECHNICAL SKILLS</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <div class="content-collapsible">
-        <p><strong><a href="https://www.mineware.co.za/" target="_blank" style="color: #bbbbbb;">MineWare Consulting</a></strong><br>Software Developer<br>August 2019 - Present (5 years 11 months), Johannesburg, South Africa</p>
-        <ul>
-          <li>Built and maintained full-stack applications using C#, SQL Server, DevExpress, and FastReport.</li>
-          <li>Delivered support and testing for enterprise clients across mining and workplace safety platforms.</li>
-          <li>Participated in Agile/Scrum development cycles and worked closely with cross-functional teams.</li>
-        </ul>
-        <p><strong><a href="https://www.younglings.academy/" target="_blank" style="color: #bbbbbb;">Younglings Africa</a></strong><br>Software Developer Intern<br>February 2019 - December 2019 (11 months), Cape Town, South Africa</p>
-        <ul>
-          <li>Developed web applications using ASP.NET, JavaScript, and HTML5.</li>
-          <li>Gained hands-on experience with Linux-based development, Git version control, and full-stack tools.</li>
-        </ul>
-        <p><strong><a href="https://capaciti.breezy.hr/" target="_blank" style="color: #bbbbbb;">Capaciti</a></strong><br>Software Developer Trainee<br>February 2018 - January 2019 (1 year), Cape Town, South Africa</p>
-        <ul>
-          <li>Trained in Java, JavaScript, JSON, MySQL, HTML5, CSS, and PHP.</li>
-          <li>Contributed to real-world software projects as part of an accelerated technical training program.</li>
-        </ul>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4><i class="fas fa-code"></i> Languages & Frameworks</h4>
+            <ul class="skill-list">
+              <li>C#, .NET Framework</li>
+              <li>ASP.NET Web Forms</li>
+              <li>ASP.NET MVC</li>
+              <li>ASP.NET Core</li>
+              <li>Java</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h4><i class="fas fa-database"></i> Databases</h4>
+            <ul class="skill-list">
+              <li>SQL Server 2012+</li>
+              <li>Database Design</li>
+              <li>Query Optimization</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h4><i class="fas fa-globe"></i> Web Technologies</h4>
+            <ul class="skill-list">
+              <li>HTML5, CSS, JavaScript</li>
+              <li>Modern JS Libraries</li>
+              <li>RESTful Services</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h4><i class="fas fa-tools"></i> Tools & Practices</h4>
+            <ul class="skill-list">
+              <li>DevExpress UI Framework</li>
+              <li>Windows Services</li>
+              <li>Agile / Scrum</li>
+              <li>SDLC Management</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category">
+            <h4><i class="fas fa-cloud"></i> Emerging Technologies</h4>
+            <ul class="skill-list">
+              <li>CI/CD Pipelines</li>
+              <li>Cloud PaaS</li>
+              <li>Docker & Kubernetes</li>
+              <li>Enterprise Integration</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="section">
-      <button class="collapsible" onclick="toggleSection(this)">Education <span>+</span></button>
+    <!-- Professional Experience -->
+    <div class="section" id="experience">
+      <button class="collapsible" onclick="toggleSection(this)">
+        <span><i class="fas fa-briefcase"></i> PROFESSIONAL EXPERIENCE</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <div class="content-collapsible">
-        <ul>
-          <li><strong>University of the Western Cape</strong>: Postgraduate Diploma in Software Development, 2018</li>
-          <li><strong>University of the Free State</strong>: BSc. Information Technology (Industry and Mining), 2011 - 2016</li>
-          <li><strong>IIE Rosebank College</strong>: Certificate in Computer Technical Support(A+ and N+), 2007 - 2008</li>
-        </ul>
+        <!-- MineWare Consulting -->
+        <div class="experience-item">
+          <h3 class="company-name"><a href="https://www.mineware.co.za/" target="_blank">MineWare Consulting</a></h3>
+          <p class="job-title">Senior Software Developer</p>
+          <p class="duration">2019 – Present</p>
+          <ul class="experience-details">
+            <li>Designed and developed a <strong>Ventilation Compliance System</strong> used in mining operations to support safety checks, regulatory compliance and incident investigations</li>
+            <li>Took ownership of the solution <strong>within two months of joining</strong>, delivering it successfully into production</li>
+            <li>Maintained and enhanced multiple <strong>security and audit systems</strong>, including <strong>Pre-Planning and Start-Up Capture applications</strong> used by Safety, Survey, Geology, Rock Engineering, Ventilation and Mining departments</li>
+            <li>Supported systems relied upon by <strong>mine auditors during incident and fatality investigations</strong>, requiring high levels of accuracy, stability and data integrity</li>
+            <li>Worked closely with clients and stakeholders to gather requirements, resolve issues and deliver enhancements</li>
+            <li>Responsible for application quality, troubleshooting production issues and reporting progress to management</li>
+          </ul>
+        </div>
+
+        <!-- Younglings Africa -->
+        <div class="experience-item">
+          <h3 class="company-name"><a href="https://www.younglings.academy/" target="_blank">Younglings Africa</a></h3>
+          <p class="job-title">Software Developer Intern</p>
+          <p class="duration">2019</p>
+          <ul class="experience-details">
+            <li>Full Stack development using <strong>C#, Java, ASP.NET MVC, SQL, JavaScript, HTML5 and CSS</strong></li>
+            <li>Built web and desktop applications using <strong>JavaFX</strong> and modern web technologies</li>
+            <li>Developed a mobile application prototype and worked with <strong>OutSystems</strong></li>
+          </ul>
+        </div>
+
+        <!-- Capaciti -->
+        <div class="experience-item">
+          <h3 class="company-name"><a href="https://capaciti.breezy.hr/" target="_blank">Capaciti</a></h3>
+          <p class="job-title">Software Developer Trainee</p>
+          <p class="duration">2018</p>
+          <ul class="experience-details">
+            <li>Backend development using <strong>Java and PHP</strong>, including <strong>JUnit testing</strong></li>
+            <li>Built web applications using <strong>JavaScript, HTML5 and CSS</strong></li>
+            <li>Worked with <strong>Web APIs</strong> including WhereIsMyTransport, MapBox and Vue.js integrations</li>
+            <li>Exposure to <strong>Data Science, AI and FinTech fundamentals</strong></li>
+          </ul>
+        </div>
       </div>
     </div>
 
+    <!-- Education -->
     <div class="section">
-      <button class="collapsible" onclick="toggleSection(this)">Skills <span>+</span></button>
+      <button class="collapsible" onclick="toggleSection(this)">
+        <span><i class="fas fa-graduation-cap"></i> EDUCATION</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
       <div class="content-collapsible">
-        <p><strong>Languages & Technologies:</strong> C#, ASP.NET, SQL, JavaScript, HTML5, CSS, XML, PHP,  MySQL, Java, JavaFX </p>
-        <p><strong>Development & Tools:</strong> Visual Studio, Git, DevExpress, Microsoft SQL Server, SceneBuilder, FastReport </p>
-        <p><strong>Frameworks & Methodologies:</strong> Scrum, Object-Oriented Programming (OOP), Full-Stack Development, UI/UX Design</p>
-        <p><strong>Soft Skills:</strong> Analytical Thinking, Critical Problem Solving, Creative Ideation, Client Support, Collaborative Teamwork</p>
-      </div>
-      <div class="skill-years">
-        <h3>Years of Experience per Skill</h3>
-        <ul>
-          <li>Full-Stack Development: 6+ years</li>
-          <li>C# & Microsoft SQL Server: 6+ years</li>
-          <li>Git & Version Control: 6+ years</li>
-          <li>OOP & Software Development: 6+ years</li>
-          <li>JavaScript, HTML5, CSS, ASP.NET: 2+ years</li>
-          <li>Java, JavaFX, SceneBuilder: 2+ years</li>
-          <li>User Experience & UI Design: 6+ years</li>
+        <ul class="experience-details">
+          <li><strong>Postgraduate Diploma in Software Development</strong> – University of the Western Cape</li>
+          <li><strong>BSc IT (Industrial & Mining)</strong> – University of the Free State</li>
+          <li><strong>Computer Technical Support</strong> – Rosebank College</li>
         </ul>
       </div>
     </div>
 
+    <!-- Selected Projects -->
     <div class="section">
-      <h2>Recommendation</h2>
-      <div class="recommendation">
+      <h2 class="section-title"><i class="fas fa-project-diagram"></i> SELECTED PROJECTS</h2>
+      
+      <div class="project-item">
+        <h3 class="project-title">Ventilation Inspection Application (Syncromine)</h3>
+        <p>Security-focused compliance system used to assess workplace safety conditions in mining environments. Supports regulatory compliance and incident investigations with high data integrity requirements.</p>
+      </div>
+      
+      <div class="project-item">
+        <h3 class="project-title">Pre-Planning & Start-Up Capture Systems</h3>
+        <p>Enterprise applications enabling structured operational planning and audit-ready data capture across multiple departments including Safety, Survey, Geology, Rock Engineering, and Ventilation.</p>
+      </div>
+      
+      <div class="project-item">
+        <h3 class="project-title">School Management System</h3>
+        <p>Web application built using <strong>ASP.NET, C#, SQL, JavaScript and CSS</strong> to automate teachers' daily administrative tasks, improving efficiency in educational administration.</p>
+      </div>
+    </div>
+
+    <!-- Professional Attributes -->
+    <div class="section">
+      <h2 class="section-title"><i class="fas fa-user-check"></i> PROFESSIONAL ATTRIBUTES</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4><i class="fas fa-brain"></i> Cognitive Skills</h4>
+          <ul class="skill-list">
+            <li>Strong problem-solving and analytical skills</li>
+            <li>High attention to detail and data accuracy</li>
+            <li>Critical thinking in complex scenarios</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-users"></i> Interpersonal Skills</h4>
+          <ul class="skill-list">
+            <li>Team-oriented with a collaborative mindset</li>
+            <li>Effective stakeholder communication</li>
+            <li>Client-focused approach</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h4><i class="fas fa-chart-line"></i> Professional Qualities</h4>
+          <ul class="skill-list">
+            <li>Able to perform under pressure while maintaining quality</li>
+            <li>Passionate about continuous learning and improvement</li>
+            <li>End-to-end system ownership mentality</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- References -->
+    <div class="section">
+      <h2 class="section-title"><i class="fas fa-comments"></i> REFERENCE</h2>
+      <div class="reference-card">
         "I had the pleasure of working alongside Teboho on several projects, and I can confidently say that he is an intelligent, skilled, and highly competent professional. He consistently approached his work with a high level of professionalism and demonstrated a collaborative and positive attitude.<br><br>
         Teboho's interpersonal skills, combined with his genuine kindness and generosity, made him an asset not only to the team but also to the overall work environment. I am confident that any organisation would greatly benefit from his broad range of talents, both in a professional and personal capacity."
-        <br><br>– Michael Tolmay, Senior Developer
+        
+        <div class="reference-contact">
+          <p><strong>Michael Tolmay</strong><br>
+          Senior Software Developer, Tolmay Enterprises<br>
+          📧 michael@tolmayenterprises.com<br>
+          📞 +27 72 158 4321</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    // Toggle collapsible sections
+    function toggleSection(button) {
+      button.classList.toggle("active");
+      const icon = button.querySelector('.fa-chevron-down');
+      if (icon) {
+        icon.style.transform = button.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    // Modal functions
+    function openModal() {
+      document.getElementById("downloadModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("downloadModal").style.display = "none";
+    }
+
+    function proceedDownload() {
+      // Expand all sections before printing
+      const collapsibles = document.querySelectorAll('.collapsible');
+      collapsibles.forEach(btn => {
+        if (!btn.classList.contains('active')) {
+          btn.classList.add('active');
+        }
+      });
+      
+      closeModal();
+      setTimeout(() => {
+        window.print();
+      }, 500);
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById("downloadModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Smooth scrolling for sidebar links
+    document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 20,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Add animation delays to sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach((section, index) => {
+        section.style.animationDelay = `${index * 0.2}s`;
+      });
+    });
+  </script>
 </body>
 </html>
